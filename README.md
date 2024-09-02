@@ -3,6 +3,10 @@
 
   - Create React App
   - Configured Tailwind CSS
+  - Added React Router DOM
+  - Header
+  - Login Form
+  - Sign up From
 
 # Features
 
