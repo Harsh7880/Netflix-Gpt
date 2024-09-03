@@ -2,23 +2,57 @@ import React from "react";
 import Header from "./Header";
 import { useState, useRef } from "react";
 import { checkValidateData } from "../utils/validate";
+import {createUserWithEmailAndPassword , signInWithEmailAndPassword } from "firebase/auth";
+import {auth} from "../utils/firebase"
+
 
 const Login = () => {
 
   const [isSignInFrom,setIsSignInFrom] = useState(true);
   const [errorMesaage, setErrorMessage] = useState(null);
   
-  const fullName = useRef(null);
+  const fullName = useRef("");
   const email = useRef(null);
   const password = useRef(null);
 
   const handleButtonClick = () => {
-
+   console.log("Button clicked")
     const message = checkValidateData(email.current.value,password.current.value,fullName.current.value);
     setErrorMessage(message);
-  }
 
-  
+    if(message) return;
+    console.log(message);
+
+    if(!isSignInFrom){
+      // Sign Up Logic
+      createUserWithEmailAndPassword(auth, email.current.value,password.current.value)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorCode + "-" + errorMessage);
+          setErrorMessage(errorCode + "-" + errorMessage);
+        });
+
+    }else{
+      // Sign In logic
+      console.log("Start SIgn IN ");
+      signInWithEmailAndPassword(auth, email.current.value,password.current.value)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user)
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setErrorMessage(errorCode + "-" + errorMessage);
+      });
+    }
+
+  }
 
   const toggleSignInfrom = () => {
     setIsSignInFrom(!isSignInFrom);
@@ -66,7 +100,6 @@ const Login = () => {
         onClick={handleButtonClick}
         className="w-full p-2 my-5  bg-red-700 rounded">
         {isSignInFrom ? "Sign In" : "Sign Up "}
-          
         </button>
         <p className="py-4 cursor-pointer" 
         onClick={toggleSignInfrom}
