@@ -18,18 +18,27 @@ const Header = () => {
     })
   }
 
-  useEffect(()=>{
-    onAuthStateChanged(auth,(user)=>{
-      if(user){
-        const {uid, email,displayName,photoURL} = user;
-        dispatch(addUser({uid: uid, email: email, displayName: displayName, photoURL: photoURL}));
-        navigate("/browse")
-      }else{
-        dispatch(removeUser())
-        navigate("/")
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { uid, email, displayName, photoURL } = user;
+        dispatch(
+          addUser({
+            uid: uid,
+            email: email,
+            displayName: displayName,
+            photoURL: photoURL,
+          })
+        );
+        navigate("/browse");
+      } else {
+        dispatch(removeUser());
+        navigate("/");
       }
-    })
-  },[])
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   return (
     <>
