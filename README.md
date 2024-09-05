@@ -19,6 +19,8 @@
   - Bug fix: Profile Photo and Display Name on Sign Up
   - Bug fix - If user is signed out do not allow to redirect to the browse page and vice-versa
   - Unsubscribed to the onAuthStateChanged callback
+  - Register on TBDM & register a app and get access token
+  - All can api for getting the now playing movies
 
 # Features
 
