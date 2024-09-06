@@ -21,6 +21,8 @@
   - Unsubscribed to the onAuthStateChanged callback
   - Register on TBDM & register a app and get access token
   - All can api for getting the now playing movies
+  - Added Movie Slice and dispatched a cation for adding now playing movies to the store 
+  - Created custom hook for now playing movies
 
 # Features
 
