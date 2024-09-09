@@ -20,13 +20,15 @@
   - Bug fix - If user is signed out do not allow to redirect to the browse page and vice-versa
   - Unsubscribed to the onAuthStateChanged callback
   - Register on TBDM & register a app and get access token
-  - All can api for getting the now playing movies
+  - Added api for getting the now playing movies
   - Added Movie Slice and dispatched a cation for adding now playing movies to the store 
   - Created custom hook for now playing movies
   - Created MainContainer and Desondary Conatiner for Browse Page
   - Video Title for Movie build
   - Added API to get videos of a movie
   - Added Video Tariler as Background
+  - build Secondary container
+  
 
 # Features
 
