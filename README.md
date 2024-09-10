@@ -31,6 +31,10 @@
   - Added now playing, tredinng movie , top rated movies in movie list in secondary container
   - Make movie list dynamic 
   - fteched data for for popular,top rated and upcoming movies throup API
+  - Created button for GPT Search Sugegtion Page and toggle functionality
+  - Added GPT Movie Suggetion Component 
+  - Created Search bar for movie suggetion page
+  - Supported GPT Movie Suggetion page in four languages hindi, english, spanish, french
 
 
 # Features

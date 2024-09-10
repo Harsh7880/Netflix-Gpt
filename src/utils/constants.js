@@ -29,3 +29,24 @@ export const UP_COMING_MOVIES_API_URL =
   "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1";
 
 export const POSTER_URL = "https://image.tmdb.org/t/p/w300";
+
+export const SUPPORTED_LANGUAGE = [
+  {
+    identifier: "en",
+    name: "English"
+  },
+  {
+    identifier: "hindi",
+    name: "Hindi"
+  },
+  {
+    identifier: "spanish",
+    name: "Spanish"
+  },
+  {
+    identifier: "french",
+    name: "French"
+  }
+];
+
+export const API_KEY='AIzaSyB0UYXNNVUppwPut6iK1hHGP5eEWZK-cu0';
