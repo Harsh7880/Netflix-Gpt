@@ -6,17 +6,26 @@ export const PHOTO_URL =
 
 export const BACKGROUND_IMAGE =
   "https://assets.nflxext.com/ffe/siteui/vlv3/31ef2c5c-3d08-47d5-b7a9-f29e4f4f893d/1ac1cee7-5580-4cfa-b701-99d1a8f2d148/IN-en-20240506-POP_SIGNUP_TWO_WEEKS-perspective_WEB_ebbef551-d229-4865-8cdc-fb00f8960227_large.jpg";
- 
-export const API_OPTIONS  = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlN2JkNjBlZmQwMTk0MzUwNjA3MGNiMGEzMzMzNzExNyIsIm5iZiI6MTcyNTU1MjM2Mi42MTE1NzMsInN1YiI6IjY2ZDlkNjJmNmM0NzQyNzczMzhmMmFjMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0uLWBcxopDp7wQC5qfjMsAVeSLIHCw4WbNwxcv9YagM'
-  }
-};  
 
-export const API_URL = 'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1';
+export const API_OPTIONS = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlN2JkNjBlZmQwMTk0MzUwNjA3MGNiMGEzMzMzNzExNyIsIm5iZiI6MTcyNTU1MjM2Mi42MTE1NzMsInN1YiI6IjY2ZDlkNjJmNmM0NzQyNzczMzhmMmFjMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0uLWBcxopDp7wQC5qfjMsAVeSLIHCw4WbNwxcv9YagM",
+  },
+};
+
+export const NOW_PLAYING_MOVIES_API_URL =
+  "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
+
+export const POPULAR_MOVIES_API_URL =
+  "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
+
+export const TOP_RATED_MOVIES_API_URL =
+  "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
+
+export const UP_COMING_MOVIES_API_URL =
+  "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1";
 
 export const POSTER_URL = "https://image.tmdb.org/t/p/w300";
-
-

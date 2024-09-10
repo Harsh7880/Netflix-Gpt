@@ -1,22 +1,21 @@
-import React from 'react'
-import MovieCard from './MovieCard'
+import React from "react";
+import MovieCard from "./MovieCard";
 
-const MovieList = ({title, movies}) => {
-    console.log(movies);
-  return  (
-    <div className='p-3 relative -top-64'>
-    <h1 className='text-3xl my-2 py-1 text-white'> {title} </h1>
-    <div className='flex  overflow-x-scroll'>
-        
-      <div className='flex'>
-        {movies.map((movie) => (
-          <MovieCard key={movie.id} posterPath={movie.poster_path} />
-        ))}
+const MovieList = ({ title, movies }) => {
+  return (
+    movies && (
+      <div className="p-3 relative -top-64">
+        <h1 className="text-3xl my-2 py-1 text-white"> {title} </h1>
+        <div className="flex  overflow-x-scroll">
+          <div className="flex">
+            {movies?.map((movie) => (
+              <MovieCard key={movie.id} posterPath={movie.poster_path} />
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
-    
+    )
   );
-}
+};
 
-export default MovieList
+export default MovieList;

@@ -29,7 +29,9 @@
   - Added Video Tariler as Background
   - build Secondary container
   - Added now playing, tredinng movie , top rated movies in movie list in secondary container
-    
+  - Make movie list dynamic 
+  - fteched data for for popular,top rated and upcoming movies throup API
+
 
 # Features
 
