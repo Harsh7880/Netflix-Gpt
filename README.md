@@ -28,7 +28,8 @@
   - Added API to get videos of a movie
   - Added Video Tariler as Background
   - build Secondary container
-  
+  - Added now playing, tredinng movie , top rated movies in movie list in secondary container
+    
 
 # Features
 
