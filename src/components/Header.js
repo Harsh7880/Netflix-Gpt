@@ -3,32 +3,32 @@ import React, { useEffect } from "react";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser,removeUser } from "../utils/userSlice";
+import { addUser, removeUser } from "../utils/userSlice";
 import { LOGO, SUPPORTED_LANGUAGE } from "../utils/constants";
 import { toggleGPTSeachView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
 
-
 const Header = () => {
-
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
+  const showGPTSearchView = useSelector((store) => store.gpt.showGPTSearchView);
   const dispatch = useDispatch();
 
   const handleSignOut = () => {
-    signOut(auth).then(()=>{
-    }).catch((error)=>{
-     navigate("/error");
-    })
-  }
+    signOut(auth)
+      .then(() => {})
+      .catch((error) => {
+        navigate("/error");
+      });
+  };
 
-  const handleGPTSearchToggle = (e) =>{
-       dispatch (toggleGPTSeachView(e.target.value));
-  } 
+  const handleGPTSearchToggle = (e) => {
+    dispatch(toggleGPTSeachView(e.target.value));
+  };
 
   const handleLanguageChange = (e) => {
-    dispatch(changeLanguage(e.target.value))
-  }
+    dispatch(changeLanguage(e.target.value));
+  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -59,22 +59,24 @@ const Header = () => {
 
         {user && (
           <div className="p-2 flex">
-            <select
-              onChange={handleLanguageChange}
-              className="py-0 px-6 m-2 outline-0 rounded"
-            >
-              {SUPPORTED_LANGUAGE.map((lang) => (
-                <option value={lang.identifier} key={lang.identifier}>
-                  {lang.name}
-                </option>
-              ))}
-            </select>
+            {showGPTSearchView && (
+              <select
+                onChange={handleLanguageChange}
+                className="py-0 px-6 m-2 outline-0 rounded"
+              >
+                {SUPPORTED_LANGUAGE.map((lang) => (
+                  <option value={lang.identifier} key={lang.identifier}>
+                    {lang.name}
+                  </option>
+                ))}
+              </select>
+            )}
 
             <button
               onClick={handleGPTSearchToggle}
-              className="text-black bg-teal-300 px-6 rounded m-2 mr-4 cursor-pointer"
+              className="text-black bg-teal-300 px-6 rounded m-2 mr-4 cursor-pointer outline-0"
             >
-              GPT Search
+              {showGPTSearchView ? "Home Page" : "GPT Search"}
             </button>
 
             <img
