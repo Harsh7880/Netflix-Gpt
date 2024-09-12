@@ -33,20 +33,20 @@ export const POSTER_URL = "https://image.tmdb.org/t/p/w300";
 export const SUPPORTED_LANGUAGE = [
   {
     identifier: "en",
-    name: "English"
+    name: "English",
   },
   {
     identifier: "hindi",
-    name: "Hindi"
+    name: "Hindi",
   },
   {
     identifier: "spanish",
-    name: "Spanish"
+    name: "Spanish",
   },
   {
     identifier: "french",
-    name: "French"
-  }
+    name: "French",
+  },
 ];
 
-export const API_KEY='AIzaSyB0UYXNNVUppwPut6iK1hHGP5eEWZK-cu0';
+export const API_KEY = "AIzaSyB0UYXNNVUppwPut6iK1hHGP5eEWZK-cu0";

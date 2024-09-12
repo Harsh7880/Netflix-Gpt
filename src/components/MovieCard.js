@@ -3,7 +3,7 @@ import { POSTER_URL } from '../utils/constants'
 
 const MovieCard = ({posterPath}) => {
 
-  return (
+  return posterPath && (
     <div className='w-48 mr-3'>
         <img alt='movie-poster'
         className=''
